@@ -11,7 +11,10 @@
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.5.0",
     "sequelize-cli": "^6.2.0",
-    "sequelize-slugify": "^1.4.0"
+    "sequelize-slugify": "^1.4.0",
+    "valid-url": "^1.0.9",
+    "validator": "^13.5.2",
+    "validator.js-validate": "^1.1.0"
   },
   "scripts": {
     "start": "nodemon app.js"

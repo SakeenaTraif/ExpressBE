@@ -5,7 +5,7 @@ module.exports =(sequelize,DataTypes) => {
         name: { type: DataTypes.STRING , allowNull: false },
         slug: { type: DataTypes.STRING ,  unique: true},
         price: { type: DataTypes.DOUBLE , defaultValue: 0 , validate: {min: 0,}},
-        image: { type: DataTypes.STRING, isUrl: true},
+        image: { type: DataTypes.STRING, validate: {isUrl: true}},
         description: { type: DataTypes.STRING },
     });
 
