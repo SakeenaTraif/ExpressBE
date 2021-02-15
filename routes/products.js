@@ -3,9 +3,24 @@ const {productCreate,
         productList,
         productDetails,  
         productDelete, 
-        productUpdate} = require("../controllers/productController");
+        productUpdate,
+        fetchProduct} = require("../controllers/productController");
 
 const route = express.Router();
+
+     // Fetch Route
+     route.param("productId", async (req, res, next, productId) => {
+      const foundProduct = await fetchProduct(productId, next);
+         if (foundProduct) {
+        req.product = foundProduct;
+         next();
+        } else {
+          next({
+         status: 404,
+         message: "No Task Match",
+        });
+         }
+        });
 
     // Create Product Route
     route.post("/", productCreate);
